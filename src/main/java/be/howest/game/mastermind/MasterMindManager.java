@@ -4,8 +4,18 @@ import java.util.Random;
 
 import be.howest.game.mastermind.util.Tools;
 
+/**
+ * Creates MasterMind game and a secret color(-code) combination
+ * @author Hayk
+ *
+ */
 public class MasterMindManager {
 	
+	/**
+	 * Creates MasterMind game based on Template
+	 * @param template The template used to create MasterMind
+	 * @return New MasterMind object
+	 */
 	public MasterMind createMasterMind(Template template) {
 		Secret secret = createSecret(template);
 		return new MasterMind(secret, template);

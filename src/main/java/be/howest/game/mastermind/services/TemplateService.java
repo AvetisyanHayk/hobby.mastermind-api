@@ -7,6 +7,11 @@ import java.util.Map;
 
 import be.howest.game.mastermind.Template;
 
+/**
+ * Template Service class
+ * @author Hayk
+ *
+ */
 public class TemplateService {
 	
 	private static final Map<Integer, Template> TEMPLATES = new LinkedHashMap<>();
@@ -23,14 +28,29 @@ public class TemplateService {
 		TEMPLATES.put(8, new Template(8, 8, 10));
 	}
 	
+	/**
+	 * Reads a template by id
+	 * @param id Template-id
+	 * @return Null if template not found or the corresponding Template
+	 */
 	public Template read(int id) {
-		return TEMPLATES.get(id);
+		if (id >= 0 && id < count())
+			return TEMPLATES.get(id);
+		return null;
 	}
 	
+	/**
+	 * Gets List of all available templates
+	 * @return ArrayList of all available templates
+	 */
 	public List<Template> findAll() {
 		return new ArrayList<>(TEMPLATES.values());
 	}
 	
+	/**
+	 * Gets total count of available templates
+	 * @return Total count of available templates
+	 */
 	public int count() {
 		return TEMPLATES.size();
 	}

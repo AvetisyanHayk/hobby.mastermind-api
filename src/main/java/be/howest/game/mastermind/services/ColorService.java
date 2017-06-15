@@ -7,6 +7,11 @@ import java.util.Map;
 
 import be.howest.game.mastermind.commons.Color;
 
+/**
+ * Color Service class
+ * @author Hayk
+ *
+ */
 public class ColorService {
 	
 	private static final Map<Integer, Color> COLORS = new LinkedHashMap<>();
@@ -24,10 +29,22 @@ public class ColorService {
 		COLORS.put(9, Color.BLACK);
 	}
 
+	/**
+	 * Reads a color by id (color-code)
+	 * @param id Color-code
+	 * @return Null if color not found or the corresponding Color (Color enum value)
+	 */
 	public Color read(int id) {
-		return COLORS.get(id);
+		if (id >= 0 && id < count())
+			return COLORS.get(id);
+		return null;
 	}
 	
+	/**
+	 * Gets List of colors by ids (color-codes)
+	 * @param colorIds Color-codes
+	 * @return ArrayList of colors (nulls as well)
+	 */
 	public List<Color> findAllByIds(int[] colorIds) {
 		List<Color> colors = new ArrayList<>();
 		for (int colorId : colorIds) {
@@ -39,6 +56,10 @@ public class ColorService {
 		return colors;
 	}
 
+	/**
+	 * Gets total count of available colors
+	 * @return Total count of available colors
+	 */
 	public int count() {
 		return COLORS.size();
 	}

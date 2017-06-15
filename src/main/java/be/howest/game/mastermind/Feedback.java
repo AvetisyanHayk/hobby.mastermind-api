@@ -106,9 +106,7 @@ public class Feedback {
 	 * @return False if the boardWidth (the MasterMind pawn width) is not valid,
 	 * or if total count of color(-code)s within attempt is more than the total holes on a pawn (boardWidth),
 	 * or if the attempt-array contains invalid color(-code)s,
-	 * or True if the boardWidth is valid,
-	 * total count of color(-code)s within attempt are less or equal to total holes on a pawn (board width),
-	 * and the boardWidth is valid
+	 * or else True
 	 */
 	public static boolean isValidAttempt(int[] attempt, int boardWidth, int colorCount) {
 		return Template.isValidBoardWidth(boardWidth) && attempt.length <= boardWidth

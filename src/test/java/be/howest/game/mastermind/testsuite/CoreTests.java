@@ -6,10 +6,9 @@ import org.junit.runners.Suite;
 import be.howest.game.mastermind.FeedbackTest;
 import be.howest.game.mastermind.HistoryTest;
 import be.howest.game.mastermind.MasterMindManagerTest;
-import be.howest.game.mastermind.TemplateTest;
 import be.howest.game.mastermind.MasterMindTest;
 import be.howest.game.mastermind.SecretTest;
-import be.howest.game.mastermind.ToolsTest;
+import be.howest.game.mastermind.TemplateTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -19,7 +18,6 @@ import be.howest.game.mastermind.ToolsTest;
 	MasterMindTest.class,
 	SecretTest.class,
 	TemplateTest.class,
-	ToolsTest.class
 })
 public class CoreTests {
 
